@@ -1,10 +1,21 @@
+// pages/notes/[id].jsx
 import React from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
-const Page = () => {
+const NotesDisp = () => {
   const router = useRouter();
   const { id } = router.query;
-  return <h1>Note:{id}</h1>;
+
+  return (
+    <div>
+      <h1>Note: {id} </h1>
+
+      <Link href="/notes">
+        <a>Notes</a>
+      </Link>
+    </div>
+  );
 };
 
-export default Page;
+export default NotesDisp;
